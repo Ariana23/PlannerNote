@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "597791482800",
+    "project_id": "planner-211d5",
+    "storage_bucket": "planner-211d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597791482800:android:7a4e05979eef5c6330ec75",
+        "android_client_info": {
+          "package_name": "com.example.plannernote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEn5gKms_w4pkb1NpmiC9BFeY-ytUrhbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
