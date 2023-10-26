@@ -17,6 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.plannernote.ui.theme.PlannerNoteTheme
 import com.example.plannernote.ui.theme.screens.LoguinName
+import com.example.plannernote.ui.theme.screens.Registro
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,14 +35,19 @@ class MainActivity : ComponentActivity() {
                         composable("login"){
                             //LLAMO A LAS FUNCIONES DE MIS SCREENS
                            LoguinName(modifier = Modifier){
-                               navController.navigate(route = "registro")
-
 
                            }
                         }
-                    }
-                       }
+                        composable("registro"){
+                            Registro(modifier = Modifier, onCreateUser = {
+                                navController.navigate(
+                                    route = "login/"
+                                )
+                            })
+                        }
                     }
                 }
             }
         }
+    }
+}
