@@ -18,6 +18,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -61,8 +63,7 @@ fun LoguinName(
                     label = { Text("Contraseña") }
                 )
                 Button(onClick = {
-
-
+                        onCreateUser()
                 }) {
                     //ACA TIENE QUE RECIBIR LA VARIABLE propuesta_nombre
                     Text(text = "REGISTRATE")

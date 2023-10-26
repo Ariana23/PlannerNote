@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.sp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Registro(modifier: Modifier,
-             onCreateUser: (String) -> Unit,){
+             onCreateUser: () -> Unit,){
 
     var nameRegistro by remember { mutableStateOf("") }
 
