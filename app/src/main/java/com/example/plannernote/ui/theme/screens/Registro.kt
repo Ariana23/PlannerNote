@@ -21,8 +21,13 @@ import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Registro(modifier: Modifier,
-             onCreateUser: () -> Unit,){
+fun Registro(
+
+    modifier: Modifier = Modifier
+
+            /* onCreateUser: () -> Unit,*/
+
+    ){
 
     var nameRegistro by remember { mutableStateOf("") }
 
