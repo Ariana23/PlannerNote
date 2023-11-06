@@ -3,20 +3,21 @@ package com.example.plannernote
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 
 
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.plannernote.navigation.PlannerNavigation
 import com.example.plannernote.ui.theme.PlannerNoteTheme
-import com.example.plannernote.ui.theme.screens.LoguinName
-import com.example.plannernote.ui.theme.screens.Registro
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -42,28 +43,33 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    // FUNCION DEL SISTEMA DE NAVEGACION
-                    NavHost(navController = navController, startDestination = "login") {
-                        composable("login"){
-                            //LLAMO A LAS FUNCIONES DE MIS SCREENS
-                           LoguinName(modifier = Modifier, auth = Firebase){
-                               // ACA ESTA LA LOGICA PARA ENTRAR DE LOGIN A REGISTRO
-                               navController.navigate("registro")
-
-                           }
-                        }
-                        composable("registro"){
-                            Registro()
-                            }
-                        }
-                    }
+                    PlannerApp()
+                }
                 }
             }
         }
+}
+@Composable
+fun PlannerApp() {
+    Surface(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 46.dp),
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ){
+            PlannerNavigation()
+        }
+
     }
+}
 
 
-
+/*
+//CODIGO VIEJITO
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview(){
@@ -74,3 +80,4 @@ fun DefaultPreview(){
     }
 
 }
+*/

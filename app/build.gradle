@@ -84,6 +84,11 @@ dependencies {
 
     implementation("com.firebaseui:firebase-ui-auth:8.0.2")
 
+    implementation("com.google.firebase:firebase-crashlytics-ktx")
+
+    //FIREBASE BASE DE DATOS FIRESTORE
+
+    implementation("com.google.firebase:firebase-firestore-ktx")
 
     // DEPENDENCIA DE NAVIGATION
     implementation("androidx.navigation:navigation-compose:2.7.4")
