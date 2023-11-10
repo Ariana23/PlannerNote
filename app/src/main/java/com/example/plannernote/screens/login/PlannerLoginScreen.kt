@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
@@ -32,6 +33,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
@@ -108,7 +110,6 @@ fun PlannerLoginScreen(navController: NavController,
                     )
 
             }
-
         }
     }
 @OptIn(ExperimentalComposeUiApi::class)
@@ -155,6 +156,16 @@ fun UserForm(
             onDone(email.value.trim(), password.value.trim())
             keyboardController?.hide()
         }
+
+
+        Spacer(modifier = Modifier.height(15.dp))
+        ClickableText(
+            text = AnnotatedString("Forzar cierre Crashlytics"),
+            onClick = {
+                //ESTO HACE QUE SE CIERRE LA APP CUANDO PRESIONO EL BOTON
+                throw RuntimeException("Error forzado desde LoginScreens")
+            }
+        )
 
     }
 }
